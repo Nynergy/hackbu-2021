@@ -1,10 +1,11 @@
 .top-nav-container{
-    background-color: $secondary-color;
-    border-bottom: 1.5px solid white;
+    @include set-colors($secondary-color);
     min-height: 10vh;
     max-height: 10vh;
+    margin-right: 5vh;
 
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
 }
@@ -13,12 +14,18 @@
 
     li{
         display: inline-block;
-        
+        margin: 0 1vh;
+        padding: 1vh;
+        transition: background-color 0.3s;
 
         a{
             text-decoration: none;
+            color: $primary-color;
+        }
+
+        &:hover {
+            @include set-colors($secondary-color-dark-5);
         }
     }
     
-
 }

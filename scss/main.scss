@@ -9,7 +9,23 @@ body {
 	clear: both;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $primary-color;
+    background: linear-gradient(to right, $secondary-highlight-color 0%, $secondary-color 80%);
+
+    h1 {
+        margin-left: 5vh;
+    }
+}
+
 .main-container {
+    margin: 2vh;
+    padding: 2vh;
+    @include set-colors($primary-highlight-color);
+
 	h2 {
 		margin: 0.5rem 0;
 	}
