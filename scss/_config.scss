@@ -1,0 +1,25 @@
+// COLORS
+$primary-color: #0000ff;
+$primary-color-light-3: lighten($primary-color, 3%);
+$primary-color-light-5: lighten($primary-color, 5%);
+$primary-color-light-10: lighten($primary-color, 10%);
+$primary-color-dark-2: darken($primary-color, 2%);
+
+$secondary-color: #ff00ff;
+$secondary-color-light-20: lighten($secondary-color, 20%);
+
+$accent-color: #ff0088;
+$accent-color-light-10: lighten($accent-color, 10%);
+$accent-color-light-20: lighten($accent-color, 20%);
+$accent-color-light-30: lighten($accent-color, 30%);
+$accent-color-light-50: lighten($accent-color, 50%);
+
+// FONTS
+$font-stack: normal 100%/1.4 Georgia, serif;
+
+// GLOBAL RESET
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
