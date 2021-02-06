@@ -3,6 +3,8 @@
     border-bottom: 1.5px solid white;
     min-height: 10vh;
     max-height: 10vh;
+    width: 100vw;
+    position: fixed;
 
     display: flex;
     justify-content: flex-end;
@@ -13,12 +15,22 @@
 
     li{
         display: inline-block;
-        
-
         a{
             text-decoration: none;
         }
-    }
-    
+    }  
+}
 
+// Hamburger for User
+#user-actions{
+    height: 5vh;
+    width: 5vh;
+    background-color: #bbb;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 5vh;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
