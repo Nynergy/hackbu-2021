@@ -11,12 +11,78 @@
     @include set-colors($primary-color);
 
     .analytics-header {
-            width: 100%;
-            background: linear-gradient(to right, $tertiary-color 0%, $tertiary-highlight-color 80%);
-            color: $primary-color;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to right, $tertiary-color 0%, $tertiary-highlight-color 80%);
+        color: $primary-color;
 
-            h2 {
-                margin-left: 2vh;
+        h2 {
+            margin-left: 2vh;
+        }
+
+        i {
+            cursor: pointer;
+            margin-right: 1.25vh;
+            padding: 0.75vh;
+            transform: scale(1.2);
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $tertiary-highlight-color-dark-5;
             }
         }
+    }
+
+    .analytics-subheader {
+        width: 95%;
+
+        h2 {
+            margin-left: 1vh;
+        }
+
+        .analytics-rule {
+            padding: 0.1vh;
+            background: linear-gradient(to right, $tertiary-color 0%, $tertiary-highlight-color 80%);
+        }
+    }
+
+    .analytics-content {
+        width: 90%;
+
+        h5 {
+            text-align: center;
+            margin-top: 2vh;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .two-column-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 1vh 0;
+                }
+            }
+        }
+    }
+
+    .log-report {
+        @include set-colors($primary-color-light-5);
+        width: 95%;
+        margin-top: 2vh;
+        font-family: monospace;
+
+        p {
+            margin-left: 2vh;
+        }
+    }
 }

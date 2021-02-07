@@ -13,10 +13,12 @@
 #nav-links{
 
     li{
+        cursor: pointer;
         display: inline-block;
         margin: 0 1vh;
         padding: 1vh;
         transition: background-color 0.3s;
+        transform: scale(1.2);
 
         a{
             text-decoration: none;
@@ -25,10 +27,7 @@
 
         &:hover {
             @include set-colors($secondary-color-dark-5);
-
-            a{
-                @include set-colors($secondary-color-dark-5);
-            }
+            color: $primary-color;
         }
     }  
 }
