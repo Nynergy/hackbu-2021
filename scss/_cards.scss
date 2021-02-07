@@ -14,16 +14,61 @@
 
         .card-header {
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background: linear-gradient(to right, $secondary-highlight-color 0%, $secondary-color 80%);
             color: $primary-color;
 
             h2 {
                 margin-left: 2vh;
             }
+
+            i {
+                margin-right: 1.25vh;
+                padding: 0.75vh;
+                transform: scale(1.2);
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: $secondary-color-dark-5;
+                }
+            }
         }
 
         .card-content {
             width: 80%;
+            display: flex;
+            align-items: center;
+            margin: 2vh 0;
+
+            .card-image {
+                height: 20vh;
+
+                img {
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            .card-stats {
+                width: auto;
+                margin-left: 5vh;
+
+                ul {
+                    li {
+                        list-style: none;
+                        margin: 1vh 0;
+                    }
+                }
+            }
+        }
+
+        .card-description {
+            width: 80%;
+            p {
+                margin-top: 0;
+            }
         }
 
         .card-buttons {
@@ -44,6 +89,16 @@
                 &:hover {
                     @include set-colors($secondary-color-dark-5);
                     color: $primary-color;
+                }
+
+                &#delete {
+                    width: 10%;
+                    padding: 5px;
+                    background-color: $secondary-color;
+
+                    &:hover {
+                        background-color: $secondary-color-light-10;
+                    }
                 }
             }
         }

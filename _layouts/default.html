@@ -14,7 +14,7 @@
 	</head>
 	<body>
         <div class="header">
-            <h1>Admin Dashboard</h1>
+            <h1>Admin Dashboard{% if page.pageName %} | {{page.pageName}}{% endif %}</h1>
             {% include nav.html %}
         </div>
         <div class="main-container">

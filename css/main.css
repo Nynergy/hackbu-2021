@@ -177,7 +177,7 @@ body {
   justify-content: center;
 }
 .footer .copyright-container {
-  margin-bottom: 0.4rem;
+  margin: 0.4rem 0;
   font-size: 0.8rem;
 }
 
@@ -215,6 +215,7 @@ body {
   border-radius: 50%;
   text-align: center;
   line-height: 5vh;
+  margin-left: 3vh;
 }
 #user-actions:hover {
   cursor: pointer;
@@ -237,14 +238,50 @@ body {
 }
 .card-container .card .card-header {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: linear-gradient(to right, #eb5e55 0%, #d81e5b 80%);
   color: #212231;
 }
 .card-container .card .card-header h2 {
   margin-left: 2vh;
 }
+.card-container .card .card-header i {
+  margin-right: 1.25vh;
+  padding: 0.75vh;
+  transform: scale(1.2);
+  transition: background-color 0.3s;
+}
+.card-container .card .card-header i:hover {
+  background-color: #c21b52;
+}
 .card-container .card .card-content {
   width: 80%;
+  display: flex;
+  align-items: center;
+  margin: 2vh 0;
+}
+.card-container .card .card-content .card-image {
+  height: 20vh;
+}
+.card-container .card .card-content .card-image img {
+  height: 100%;
+  border-radius: 50%;
+}
+.card-container .card .card-content .card-stats {
+  width: auto;
+  margin-left: 5vh;
+}
+.card-container .card .card-content .card-stats ul li {
+  list-style: none;
+  margin: 1vh 0;
+}
+.card-container .card .card-description {
+  width: 80%;
+}
+.card-container .card .card-description p {
+  margin-top: 0;
 }
 .card-container .card .card-buttons {
   width: 80%;
@@ -266,6 +303,14 @@ body {
   background-color: #c21b52;
   color: #dbe5e6;
   color: #212231;
+}
+.card-container .card .card-buttons button#delete {
+  width: 10%;
+  padding: 5px;
+  background-color: #d81e5b;
+}
+.card-container .card .card-buttons button#delete:hover {
+  background-color: #e54479;
 }
 .card-container .card1 {
   grid-column: 1/2;
@@ -295,7 +340,7 @@ body {
 }
 .analytics-container .analytics-header {
   width: 100%;
-  background: linear-gradient(to right, #9381ff 0%, #b776c6 80%);
+  background: linear-gradient(to right, #b776c6 0%, #9381ff 80%);
   color: #212231;
 }
 .analytics-container .analytics-header h2 {
