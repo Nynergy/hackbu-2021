@@ -2,8 +2,6 @@
     @include set-colors($secondary-color);
     min-height: 10vh;
     max-height: 10vh;
-    width: 100vw;
-    position: fixed;
     margin-right: 5vh;
 
     display: flex;
@@ -38,12 +36,9 @@
     background-color: #bbb;
     border-radius: 50%;
     text-align: center;
-    line-height: 5vh;x
+    line-height: 5vh;
 
     &:hover{
         cursor: pointer;
     }
-}
-    }
-    
 }
