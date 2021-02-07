@@ -3,5 +3,14 @@
         <li><a href=".">Home</a></li>
         <li><a href=".">About</a></li>
     </ul>
-    <div id="user-actions" class="hamburger">N</div>
+
+    {% if page.url == "/" %}
+        <div id="user-actions" class="hamburger"></div>
+    {% else %}
+        <div class="login-action">Log In</div>
+    {% endif %}
 </div>
+
+<script>
+    document.getElementById('user-actions').innerText = sessionStorage.getItem('user').charAt(0).toUpperCase();
+</script>

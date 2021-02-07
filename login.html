@@ -1,0 +1,90 @@
+---
+layout: auth
+titleAfter: Login
+meta: A project for the HackBU 2021 Hackathon.
+---
+
+<div class="login-container">
+    <h1 id="form-header">Login</h1><br>
+    <form id="login-form" action="javascript:validateUser()" method="POST">
+        <label for="user">Username:</label>
+        <input name="user" required><br>
+        <label for="pass">Password:</label>
+        <input id="pass" type="password" name="pass" required><br>
+        <label for="toggleCheckbox">Show Password</label>
+        <input name="toggleCheckbox" type="checkbox" onclick="togglePasswordVisibility()"><br>
+        <input type="submit" value="Log In"><br>
+
+        <h3 class="login-error">Username or Password Incorrect.</h3>
+        <button class="switch-forms">Create An Account</button>
+    </form>
+
+    <form id="signup-form" action="../php/createUser.php/" method="post">
+        <label for="create-user">Create Username:</label>
+        <input name="create-user" required><br>
+        <label for="create-pass">Create Password:</label>
+        <input id="create-pass" name="create-pass" required><br>
+        <label for="toggleCheckbox">Show Password</label>
+        <!-- <input name="toggleCheckbox" type="checkbox" onclick="togglePasswordVisibility()"><br> -->
+        <input type="submit" value="Sign Up"><br>
+        <button class="switch-forms">Back To Login </button>
+    </form>
+
+</div>
+
+<script>
+    //Functions
+    function togglePasswordVisibility(){ 
+        let p = document.getElementById('pass');
+        if (p.type === "password") {
+            p.type = "text";
+        } else {
+            p.type = "password";
+        }
+    }
+
+    function validateUser(){
+        
+        let users = {{ site.data.users | jsonify }};
+        let f = document.getElementById('login-form');
+        for(let i = 0; i < users.length; i++){
+            if(users[i].user === f.elements.user.value && users[i].pass === f.elements.pass.value){
+
+                sessionStorage.setItem('user', f.elements.user.value);
+
+                //If true, switch to dashboard
+                window.location.href = 'http://127.0.0.1:4000/index.html';
+            }
+        }
+        
+        //If none found, reject
+        document.getElementsByClassName('login-error')[0].style.display = "block";
+
+
+        
+    }    
+
+    let b = document.getElementsByClassName('switch-forms');
+    for(let i =0; i < b.length; i++){
+        b[i].addEventListener('click',
+        function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            let sf = document.getElementById('signup-form');
+            let lf = document.getElementById('login-form');
+            let header = document.getElementById('form-header');
+
+            if(lf.style.display === "flex"){
+                lf.style.display = "none";
+                sf.style.display = "flex";
+                header.textContent = "Sign Up";
+            }else{
+                lf.style.display = "flex";
+                sf.style.display = "none";
+                header.textContent = "Login";
+            }
+
+        }, false)
+    }
+</script>

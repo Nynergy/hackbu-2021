@@ -3,6 +3,7 @@ $primary-color: #212231;
 $primary-color-dark-2: darken($primary-color, 2%);
 
 $primary-highlight-color: #393c56;
+$primary-highlight-color-light: lighten($primary-highlight-color, 10%);
 $primary-highlight-color-dark-2: darken($primary-highlight-color, 2%);
 
 $secondary-color: #d81e5b;

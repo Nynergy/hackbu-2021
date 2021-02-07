@@ -25,6 +25,10 @@
 
         &:hover {
             @include set-colors($secondary-color-dark-5);
+
+            a{
+                @include set-colors($secondary-color-dark-5);
+            }
         }
     }  
 }
@@ -40,5 +44,18 @@
 
     &:hover{
         cursor: pointer;
+    }
+}
+
+.login-action{
+    padding: 0 10px;
+    line-height: 5vh;
+    height: 5vh;
+    color: $primary-color;
+    transition: background-color 0.3s;
+    &:hover {
+        cursor: pointer;
+        color: $primary-color;
+        @include set-colors($secondary-color-dark-5);
     }
 }

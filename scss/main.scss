@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     color: $primary-color;
     background: linear-gradient(to right, $secondary-highlight-color 0%, $secondary-color 80%);
-
+	min-height: 10vh;
     h1 {
         margin-left: 5vh;
     }
@@ -64,3 +64,4 @@ body {
 @import 'nav';
 @import 'cards';
 @import 'dashboard';
+@import 'login';
