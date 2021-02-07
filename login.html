@@ -19,7 +19,7 @@ meta: A project for the HackBU 2021 Hackathon.
         <button class="switch-forms">Create An Account</button>
     </form>
 
-    <form id="signup-form" action="../php/createUser.php/" method="post">
+    <form id="signup-form" action="../php/createUser.php/" method="POST">
         <label for="create-user">Create Username:</label>
         <input name="create-user" required><br>
         <label for="create-pass">Create Password:</label>
@@ -43,25 +43,23 @@ meta: A project for the HackBU 2021 Hackathon.
         }
     }
 
-    function validateUser(){
-        
+    function validateUser(){        
         let users = {{ site.data.users | jsonify }};
         let f = document.getElementById('login-form');
-        for(let i = 0; i < users.length; i++){
-            if(users[i].user === f.elements.user.value && users[i].pass === f.elements.pass.value){
 
-                sessionStorage.setItem('user', f.elements.user.value);
-
-                //If true, switch to dashboard
-                window.location.href = 'http://127.0.0.1:4000/index.html';
+        let p = new Promise( () => {
+            for(let i = 0; i < users.length; i++){
+                if(users[i].user === f.elements.user.value && users[i].pass === f.elements.pass.value){
+                    
+                    sessionStorage.setItem('user', f.elements.user.value);
+                    //If true, switch to dashboard
+                    window.location.href = 'http://127.0.0.1:4000/index.html';
+                    resolve();
+                }
             }
-        }
-        
-        //If none found, reject
-        document.getElementsByClassName('login-error')[0].style.display = "block";
-
-
-        
+            //If none found, reject
+            document.getElementsByClassName('login-error')[0].style.display = "block";        
+        });        
     }    
 
     let b = document.getElementsByClassName('switch-forms');
