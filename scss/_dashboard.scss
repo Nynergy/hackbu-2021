@@ -10,6 +10,13 @@
     align-items: center;
     @include set-colors($primary-color);
 
+    .analytics-inner-container {
+        width: 100%;
+        display: none; // This gets toggled by analytics buttons
+        flex-direction: column;
+        align-items: center;
+    }
+
     .analytics-header {
         width: 100%;
         display: flex;

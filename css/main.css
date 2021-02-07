@@ -357,6 +357,12 @@ body {
   background-color: #212231;
   color: #dbe5e6;
 }
+.analytics-container .analytics-inner-container {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
 .analytics-container .analytics-header {
   width: 100%;
   display: flex;
